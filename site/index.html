@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>night owly</title>
-<meta name="description" content="night owly makes small, focused apps: a teleprompter for creators and a Dutch course. No accounts, no ads, no tracking.">
+<meta name="description" content="night owly is a one-person app studio in the Netherlands. I design, build and look after small, focused apps: a teleprompter for creators and a Dutch course. No accounts, no ads, no tracking.">
 <meta name="theme-color" content="#f5f4fb" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0e1126" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="assets/owl.svg" type="image/svg+xml">
@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="assets/site.css">
 <meta property="og:type" content="website">
 <meta property="og:title" content="night owly">
-<meta property="og:description" content="Small, focused apps that do one job well. No accounts, no ads, no tracking.">
+<meta property="og:description" content="A one-person app studio in the Netherlands. Small apps that do one job well. No accounts, no ads, no tracking.">
 <meta property="og:image" content="{{SITE_URL}}/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <style>
@@ -75,6 +75,61 @@
     .owl-eye { animation: none; }
   }
 
+  /* About and principles. */
+  .about-grid {
+    display: grid;
+    gap: 32px;
+    align-items: start;
+  }
+  @media (min-width: 860px) {
+    .about-grid {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 56px;
+    }
+  }
+  .about-copy {
+    display: grid;
+    gap: 16px;
+    max-width: 62ch;
+  }
+  .do-list,
+  .principles {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 14px;
+  }
+  .do-list li,
+  .principles li {
+    display: grid;
+    gap: 4px;
+    padding: 18px 20px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+  }
+  .do-list strong,
+  .principles strong {
+    font-family: var(--font-display);
+    font-size: var(--step-0);
+  }
+  .do-list span,
+  .principles span {
+    color: var(--muted);
+  }
+  .principles {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  @media (min-width: 700px) {
+    .principles {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  .principles li {
+    align-content: start;
+  }
   /* Apps: a grid of compact cards that grows with each new app. */
   .apps {
     list-style: none;
@@ -198,6 +253,8 @@
       night owly
     </a>
     <nav class="nav" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#principles">How I build</a>
       <a href="#apps">Apps</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -208,11 +265,11 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <p class="kicker">Independent apps by night owly</p>
+        <p class="kicker">night owly · independent apps from the Netherlands</p>
         <h1>Small apps that do <em>one job well</em>.</h1>
-        <p class="lede">Each app does one job well. None of them ask you to sign up, show you ads or track what you do.</p>
+        <p class="lede">night owly is a one-person app studio. I design, build and look after every app myself, and none of them ask you to sign up, show you ads or track what you do.</p>
         <div class="actions">
-          <a class="button primary" href="aprompter/">Meet APrompter</a>
+          <a class="button primary" href="#apps">See what I build</a>
           <a class="button secondary" href="#contact">Get in touch</a>
         </div>
       </div>
@@ -238,12 +295,41 @@
 
   <div class="wrap" aria-hidden="true"><p class="guide"><span></span></p></div>
 
+  <section id="about" aria-labelledby="about-title">
+    <div class="wrap about-grid">
+      <div class="about-copy">
+        <p class="kicker">Who I am</p>
+        <h2 id="about-title">One person, small apps, no tricks</h2>
+        <p>I'm the developer behind night owly, working from the Netherlands. I write the code, shape the screens, write the words and answer the email, so there is always one person who knows how each app works and why.</p>
+        <p>I make apps for people with one specific job to do: a creator who has to say a script to camera, a learner who wants to use Dutch every day. I would rather build something small that works than something big that nobody needs.</p>
+      </div>
+      <ul class="do-list" role="list" aria-label="What I do">
+        <li><strong>I design</strong><span>Simple screens that do one job and stay out of your way.</span></li>
+        <li><strong>I build</strong><span>Android apps first, iPhone versions later. The whole app, front to back.</span></li>
+        <li><strong>I look after them</strong><span>Fixes, updates, support and privacy, after launch as well as before it.</span></li>
+      </ul>
+    </div>
+  </section>
+  <section id="principles" aria-labelledby="principles-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">How I build</p>
+        <h2 id="principles-title">The same few rules in every app</h2>
+      </div>
+      <ul class="principles" role="list">
+        <li><strong>No account</strong><span>You open the app and use it. Nothing to sign up for.</span></li>
+        <li><strong>No ads, no tracking</strong><span>I don't sell your attention or your data, and nothing in the apps follows what you do.</span></li>
+        <li><strong>Your work stays on your phone</strong><span>Scripts, notes and progress live on your device. The purchase check is the only thing that goes online, apart from your phone's own speech recognition in Dutchy's speaking exercises.</span></li>
+        <li><strong>Plain words</strong><span>Privacy policies and terms you can read in a few minutes, and no claims bigger than what the app really does.</span></li>
+      </ul>
+    </div>
+  </section>
   <section id="apps" aria-labelledby="apps-title">
     <div class="wrap">
       <div class="section-head">
-        <p class="kicker">Apps</p>
+        <p class="kicker">What I build</p>
         <h2 id="apps-title">On the desk right now</h2>
-        <p>Each app has its own page with screenshots, support and its privacy policy.</p>
+        <p>Each app has its own page with the details: what it does, screenshots, support and its privacy policy.</p>
       </div>
 
       <ul class="apps" role="list">
@@ -262,7 +348,7 @@
           <img class="icon" src="dutchy/img/icon-256.webp" alt="" width="64" height="64">
           <div class="app-body">
             <h3><a href="dutchy/">Dutchy</a></h3>
-            <p>A practical Dutch course from A1 to C2, with writing feedback that names the rule, pronunciation sound by sound and exam practice for inburgering, NT2 and KNM.</p>
+            <p>Learn Dutch every day, from A1 to C2, with every tool for the journey: writing feedback that names the rule, pronunciation sound by sound, practice conversations, a dictionary and exam practice.</p>
           </div>
           <div class="status">
             <span>Android · test starting</span>
@@ -283,8 +369,8 @@
   <section id="contact" class="contact" aria-labelledby="contact-title">
     <div class="wrap">
       <p class="kicker">Contact</p>
-      <h2 id="contact-title">Write to night owly</h2>
-      <p>Questions, bugs, ideas, or a request about your data: one inbox, read by the person who makes the apps.</p>
+      <h2 id="contact-title">Write to me</h2>
+      <p>Questions, bugs, ideas, or a request about your data: one inbox, read by the person who makes the apps. That is me.</p>
       <p><a class="email" href="mailto:nightowlyyyy@gmail.com">nightowlyyyy@gmail.com</a></p>
     </div>
   </section>
