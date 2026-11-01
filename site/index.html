@@ -1,19 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>night owly</title>
-<meta name="description" content="night owly makes small, focused apps: a teleprompter for creators and a Dutch course. No accounts, no ads, no tracking.">
-<meta name="theme-color" content="#f5f4fb" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0e1126" media="(prefers-color-scheme: dark)">
+<meta name="description" content="I'm a product developer based in the Netherlands, and the person behind night owly. I build mobile apps on my own: a teleprompter for people who film themselves, and a Dutch course. No accounts, ads or tracking.">
+<meta name="theme-color" content="#0e1126">
 <link rel="icon" href="assets/owl.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/owl-180.png">
 <link rel="preload" href="assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
 <meta property="og:type" content="website">
 <meta property="og:title" content="night owly">
-<meta property="og:description" content="Small, focused apps that do one job well. No accounts, no ads, no tracking.">
+<meta property="og:description" content="Apps by a product developer in the Netherlands: a teleprompter and a Dutch course.">
 <meta property="og:image" content="{{SITE_URL}}/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <style>
@@ -56,6 +55,8 @@
     place-items: end center;
     padding-bottom: 12%;
     box-shadow: 0 30px 60px -30px rgb(18 21 48 / 0.6);
+    /* The page is dark too, so a faint edge keeps the tile's shape. */
+    border: 1px solid var(--line);
   }
   .owl-stage svg {
     width: 58%;
@@ -75,6 +76,12 @@
     .owl-eye { animation: none; }
   }
 
+  /* About: plain paragraphs, one readable column. */
+  .about {
+    display: grid;
+    gap: 16px;
+    max-width: 64ch;
+  }
   /* Apps: a grid of compact cards that grows with each new app. */
   .apps {
     list-style: none;
@@ -198,6 +205,7 @@
       night owly
     </a>
     <nav class="nav" aria-label="Main">
+      <a href="#about">About</a>
       <a href="#apps">Apps</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -208,12 +216,12 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <p class="kicker">Independent apps by night owly</p>
-        <h1>Small apps that do <em>one job well</em>.</h1>
-        <p class="lede">Each app does one job well. None of them ask you to sign up, show you ads or track what you do.</p>
+        <p class="kicker">night owly</p>
+        <h1>I build mobile apps <em>on my own</em>.</h1>
+        <p class="lede">I'm a product developer based in the Netherlands, and the person behind night owly. There are two apps so far: APrompter, a teleprompter for people who film themselves, and Dutchy, a course for learning Dutch. Both are being tested on Android.</p>
         <div class="actions">
-          <a class="button primary" href="aprompter/">Meet APrompter</a>
-          <a class="button secondary" href="#contact">Get in touch</a>
+          <a class="button primary" href="#apps">See the apps</a>
+          <a class="button secondary" href="#contact">Email me</a>
         </div>
       </div>
       <div class="owl-stage" aria-hidden="true">
@@ -238,12 +246,24 @@
 
   <div class="wrap" aria-hidden="true"><p class="guide"><span></span></p></div>
 
+  <section id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <div class="about">
+        <p class="kicker">About</p>
+        <h2 id="about-title">Who makes these</h2>
+        <p>Just me. I write the code, design the screens, write the text in the apps and on this site, and answer the support emails.</p>
+        <p>Each app is for one kind of person with one thing to get done. You don't need an account for any of them, there are no ads, and they don't track what you do.</p>
+        <p>What you make in them, like a script, your notes or your progress, is stored on your phone. The apps only go online to check whether you've bought something. The one exception is Dutchy's speaking exercises: they use your phone's own speech recognition, and depending on your phone, that can go online.</p>
+        <p>Each app has its own privacy policy and terms. They're short, so it's worth reading them rather than taking my word for it.</p>
+      </div>
+    </div>
+  </section>
   <section id="apps" aria-labelledby="apps-title">
     <div class="wrap">
       <div class="section-head">
         <p class="kicker">Apps</p>
-        <h2 id="apps-title">On the desk right now</h2>
-        <p>Each app has its own page with screenshots, support and its privacy policy.</p>
+        <h2 id="apps-title">What I've made so far</h2>
+        <p>Each app has its own page with details, screenshots, support and its privacy policy.</p>
       </div>
 
       <ul class="apps" role="list">
@@ -251,7 +271,7 @@
           <img class="icon" src="aprompter/img/icon-256.webp" alt="" width="64" height="64">
           <div class="app-body">
             <h3><a href="aprompter/">APrompter</a></h3>
-            <p>A teleprompter for creators. Your script scrolls right under the camera, so you read your lines and keep eye contact.</p>
+            <p>A teleprompter for people who film themselves. Your script scrolls just under the camera, so you can read it and still look into the lens.</p>
           </div>
           <div class="status">
             <span>Android · testing now</span>
@@ -262,7 +282,7 @@
           <img class="icon" src="dutchy/img/icon-256.webp" alt="" width="64" height="64">
           <div class="app-body">
             <h3><a href="dutchy/">Dutchy</a></h3>
-            <p>A practical Dutch course from A1 to C2, with writing feedback that names the rule, pronunciation sound by sound and exam practice for inburgering, NT2 and KNM.</p>
+            <p>A Dutch course from A1 to C2 that you practise a little every day. There's a writing check that tells you the rule, pronunciation practice, conversations, a dictionary and exam practice.</p>
           </div>
           <div class="status">
             <span>Android · test starting</span>
@@ -273,7 +293,7 @@
           <span class="icon placeholder" aria-hidden="true"></span>
           <div class="app-body">
             <h3>Next app</h3>
-            <p>In the works. It will show up here when it's ready to try.</p>
+            <p>I'm working on a third one. It'll show up here when it's ready to try.</p>
           </div>
         </li>
       </ul>
@@ -283,8 +303,8 @@
   <section id="contact" class="contact" aria-labelledby="contact-title">
     <div class="wrap">
       <p class="kicker">Contact</p>
-      <h2 id="contact-title">Write to night owly</h2>
-      <p>Questions, bugs, ideas, or a request about your data: one inbox, read by the person who makes the apps.</p>
+      <h2 id="contact-title">Email me</h2>
+      <p>Questions, bugs, ideas, or something about your data. I read everything that comes in.</p>
       <p><a class="email" href="mailto:nightowlyyyy@gmail.com">nightowlyyyy@gmail.com</a></p>
     </div>
   </section>
