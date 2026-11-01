@@ -1,0 +1,100 @@
+/* Dutchy — its own accent (the app's pink), plus the pieces only this page
+   uses: the pair of phones in the hero and the numbers strip. Everything else
+   comes from site.css and app.css. */
+
+:root {
+  --violet: #c4174f;
+  --violet-soft: #fff0f4;
+  --focus: #c4174f;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --violet: #ff7a9c;
+    --violet-soft: #3a1626;
+  }
+}
+:root[data-theme="dark"] {
+  --violet: #ff7a9c;
+  --violet-soft: #3a1626;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--violet);
+}
+
+/* Two real screens, the second one lower, like a hand holding two cards. */
+.duo {
+  justify-self: center;
+  width: min(420px, 100%);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+.duo .shot {
+  width: 100%;
+  height: auto;
+}
+.duo .shot:last-child {
+  margin-top: 44px;
+}
+
+/* The size of the course, in four numbers. */
+.stats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 20px;
+}
+@media (min-width: 720px) {
+  .stats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 28px;
+  }
+}
+.stats li {
+  display: grid;
+  gap: 4px;
+  align-content: start;
+  padding-top: 14px;
+  border-top: 2px solid var(--moon);
+}
+.stats strong {
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.stats span {
+  color: var(--muted);
+  font-size: var(--step--1);
+}
+
+/* A short Dutch example inside a feature, so the language is on the page. */
+.nl-sample {
+  margin: 4px 0 0;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  background: var(--violet-soft);
+  max-width: 56ch;
+  display: grid;
+  gap: 6px;
+}
+.nl-sample p {
+  color: var(--ink);
+}
+.nl-sample .rule {
+  color: var(--muted);
+  font-size: var(--step--1);
+}
+.nl-sample mark {
+  background: none;
+  color: var(--violet);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
+}

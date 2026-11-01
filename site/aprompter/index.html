@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>APrompter</title>
+<meta name="description" content="A teleprompter for creators. Your script scrolls right under the camera, so you read your lines and keep eye contact. No account, no ads, no tracking.">
+<meta name="theme-color" content="#f5f4fb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1126" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="img/icon-64.png" type="image/png">
+<link rel="apple-touch-icon" href="img/icon-180.png">
+<link rel="preload" href="../assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/app.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="APrompter">
+<meta property="og:description" content="Read your script while you film. A teleprompter for Reels, TikTok, Shorts and YouTube.">
+<meta property="og:image" content="{{SITE_URL}}/aprompter/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  /* The device: a live Record screen. Prompter on top, camera below,
+     shutter in the middle like the app. */
+  .device {
+    --w: min(300px, 78vw);
+    width: var(--w);
+    aspect-ratio: 9 / 19;
+    border-radius: 44px;
+    padding: 10px;
+    background: #0b0d1c;
+    box-shadow:
+      0 0 0 1px rgb(255 255 255 / 0.06) inset,
+      0 40px 80px -40px rgb(18 21 48 / 0.7);
+    position: relative;
+  }
+  .screen {
+    position: relative;
+    height: 100%;
+    border-radius: 35px;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 26% 32%, rgb(255 201 138 / 0.55), transparent 22%),
+      radial-gradient(circle at 82% 46%, rgb(255 226 184 / 0.45), transparent 18%),
+      radial-gradient(circle at 70% 70%, rgb(144 180 255 / 0.45), transparent 20%),
+      radial-gradient(circle at 25% 82%, rgb(255 158 122 / 0.4), transparent 22%),
+      radial-gradient(circle at 50% 55%, rgb(255 255 255 / 0.18), transparent 30%),
+      linear-gradient(180deg, #3b2f2a, #6b5446 55%, #2a211d);
+    font-family: var(--font-body);
+  }
+  .lens {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    margin-left: -6px;
+    border-radius: 50%;
+    background: #05060c;
+    box-shadow: 0 0 0 2px #1a1c2c;
+    z-index: 3;
+  }
+  .prompter {
+    position: absolute;
+    inset: 0 0 auto;
+    height: 46%;
+    background: rgb(22 18 16 / 0.82);
+    overflow: hidden;
+  }
+  .prompter::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 38%;
+    background: linear-gradient(transparent, rgb(22 18 16 / 0.95));
+    pointer-events: none;
+  }
+  .readline {
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    top: 30%;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #ffd54f;
+    z-index: 2;
+  }
+  .readline::before,
+  .readline::after {
+    content: "";
+    border-block: 6px solid transparent;
+  }
+  .readline::before {
+    border-left: 9px solid rgb(255 255 255 / 0.75);
+  }
+  .readline::after {
+    border-right: 9px solid rgb(255 255 255 / 0.75);
+  }
+  .readline i {
+    flex: 1;
+    height: 1px;
+    background: rgb(255 255 255 / 0.28);
+  }
+  .track {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(30% + 10px);
+    padding: 0 18px;
+    text-align: center;
+    color: #fff;
+    animation: roll 24s linear infinite;
+  }
+  /* Two identical copies, each ending in the same gap, so moving the
+     track up by half its height lands exactly on the second copy. */
+  .copy {
+    padding-bottom: 14px;
+  }
+  .copy > :first-child {
+    margin-top: 0;
+  }
+  .copy > :last-child {
+    margin-bottom: 0;
+  }
+  @keyframes roll {
+    from { transform: translateY(0); }
+    to { transform: translateY(-50%); }
+  }
+  .track p {
+    font-weight: 700;
+    font-size: 1.12rem;
+    line-height: 1.3;
+    margin: 0 0 10px;
+  }
+  .track .sec {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #ffd54f;
+    margin: 4px 0 6px;
+  }
+  .track .memo {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 0.78rem;
+    color: rgb(255 255 255 / 0.62);
+  }
+  .track em {
+    font-style: normal;
+    color: #ffd54f;
+  }
+  .track .beat {
+    color: #ffd54f;
+    opacity: 0.85;
+  }
+  .hud {
+    position: absolute;
+    left: 50%;
+    bottom: 92px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 14px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: rgb(10 8 7 / 0.7);
+    color: #fff;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    white-space: nowrap;
+  }
+  .hud b {
+    font-weight: 500;
+    color: #ffd54f;
+  }
+  .shutter {
+    position: absolute;
+    left: 50%;
+    bottom: 24px;
+    width: 56px;
+    height: 56px;
+    margin-left: -28px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    display: grid;
+    place-items: center;
+  }
+  .shutter::after {
+    content: "";
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #f44336;
+  }
+  .device-wrap {
+    justify-self: center;
+    display: grid;
+    justify-items: center;
+    gap: 16px;
+  }
+  .motion-toggle {
+    min-height: 40px;
+    padding: 6px 16px;
+    font-size: var(--step--1);
+    background: transparent;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .hero:has(.motion-toggle[aria-pressed="true"]) .track {
+    animation-play-state: paused;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .track { animation: none; }
+    .motion-toggle { display: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./">
+      <img src="img/icon-256.webp" alt="" width="34" height="34">
+      APrompter
+    </a>
+    <nav class="nav" aria-label="APrompter">
+      <a href="#features">Features</a>
+      <a href="#plans">Plans</a>
+      <a href="#faq">FAQ</a>
+      <a href="support/">Support</a>
+      <a href="privacy/">Privacy</a>
+      <a href="terms/">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="app-title">
+          <img src="img/icon-256.webp" alt="" width="56" height="56">
+          <span>APrompter</span>
+        </div>
+        <p class="pill"><span class="dot" aria-hidden="true"></span>In testing on Android</p>
+        <h1>Read your script while you film.</h1>
+        <p class="lede">The text scrolls right under the camera, so you say every line and keep eye contact. For Reels, TikTok, Shorts and YouTube.</p>
+        <div class="actions">
+          <a class="button primary" href="mailto:nightowlyyyy@gmail.com?subject=APrompter%20Android%20test&amp;body=My%20Google%20account%20email%3A%20">Join the Android test</a>
+          <a class="button secondary" href="mailto:nightowlyyyy@gmail.com?subject=Tell%20me%20when%20APrompter%20is%20on%20iPhone">Get notified for iPhone</a>
+        </div>
+        <p class="note">Free for one script, with every feature. No account, no ads, no tracking.</p>
+      </div>
+
+      <div class="device-wrap">
+      <div class="device" role="img" aria-label="The APrompter Record screen: the script scrolls under the camera, with the reading line near the lens, the pace at 150 words per minute and the record button in the middle.">
+        <div class="screen">
+          <span class="lens"></span>
+          <div class="prompter">
+            <div class="readline"><i></i></div>
+            <div class="track" aria-hidden="true">
+              <div class="copy">
+                <p class="sec">Hook</p>
+                <p>Stop scrolling. This changed how I film. <span class="beat">‖</span></p>
+                <p class="memo">smile, look into the lens</p>
+                <p class="sec">Value</p>
+                <p>Most creators forget their lines halfway through a take.</p>
+                <p>With the script right under the camera, you read <em>and</em> keep eye contact.</p>
+                <p class="sec">CTA</p>
+                <p>Tap the link in my bio and try it today. <span class="beat">‖</span></p>
+              </div>
+              <div class="copy">
+                <p class="sec">Hook</p>
+                <p>Stop scrolling. This changed how I film. <span class="beat">‖</span></p>
+                <p class="memo">smile, look into the lens</p>
+                <p class="sec">Value</p>
+                <p>Most creators forget their lines halfway through a take.</p>
+                <p>With the script right under the camera, you read <em>and</em> keep eye contact.</p>
+                <p class="sec">CTA</p>
+                <p>Tap the link in my bio and try it today. <span class="beat">‖</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="hud" aria-hidden="true"><span><b>150</b> wpm</span><span>0:26 / 1:00</span></div>
+          <span class="shutter" aria-hidden="true"></span>
+        </div>
+      </div>
+      <button class="button secondary motion-toggle" type="button" aria-pressed="false">Pause the demo</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap" aria-hidden="true"><p class="guide"><span></span></p></div>
+
+  <section id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">How it works</p>
+        <h2 id="how-title">Write it, find your pace, film it in one go</h2>
+      </div>
+      <ol class="steps" role="list">
+        <li>
+          <picture>
+            <source srcset="img/editor-dark.webp" media="(prefers-color-scheme: dark)">
+            <img class="shot" src="img/editor.webp" alt="The script editor with sections, a 1:00 target and a timer showing 0:26 of speaking time." width="600" height="1300" loading="lazy">
+          </picture>
+          <h3>Write</h3>
+          <p>Pick a target length and the timer shows whether your words fit. Mark sections, emphasis and pauses as you go.</p>
+        </li>
+        <li>
+          <img class="shot" src="img/rehearse.webp" alt="Rehearse mode: big white text on black with the reading line near the top." width="600" height="1300" loading="lazy">
+          <h3>Rehearse</h3>
+          <p>Read it out loud at a pace set in words per minute. Afterwards APrompter suggests the pace you actually spoke at.</p>
+        </li>
+        <li>
+          <img class="shot" src="img/record.webp" alt="Record mode: the script over the camera preview, with the record button in the middle." width="600" height="1300" loading="lazy">
+          <h3>Record</h3>
+          <p>Film with the text under the lens. Review each take, keep it or go again from the section you choose.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="features" aria-labelledby="features-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Features</p>
+        <h2 id="features-title">Made for how creators actually film</h2>
+      </div>
+
+      <div class="feature">
+        <div class="feature-text">
+          <h3>Bring scripts from any app</h3>
+          <p>Share a note from Google Keep, Samsung Notes or Apple Notes straight to APrompter, paste text copied from Notion or Docs in one tap, or open a file. Headings become sections and bold becomes emphasis.</p>
+          <ul class="ticks" role="list">
+            <li><strong>Share to APrompter</strong> from the share sheet, or <em>Open with</em> on a file</li>
+            <li><strong>Paste as new script</strong> cleans up text copied from Docs, Word and chats</li>
+            <li><strong>Save as text file</strong> to send a script back to Notes, Keep, Drive or email</li>
+          </ul>
+          <ul class="formats" role="list" aria-label="File types APrompter opens">
+            <li>.txt</li><li>.md</li><li>.docx</li><li>.rtf</li><li>.odt</li><li>.html</li><li>.enex</li><li>.srt</li><li>.vtt</li>
+          </ul>
+        </div>
+        <picture>
+          <source srcset="img/import-dark.webp" media="(prefers-color-scheme: dark)">
+          <img class="shot" src="img/import.webp" alt="New script options: paste from any app, import files, or start from a template." width="600" height="1300" loading="lazy">
+        </picture>
+      </div>
+
+      <div class="feature flip">
+        <div class="feature-text">
+          <h3>Set up once, for the way you film</h3>
+          <p>Pick the setup you film with, then fine-tune it with a live preview.</p>
+          <ul class="ticks" role="list">
+            <li><strong>Handheld selfie</strong>: medium text, reading line close to the lens</li>
+            <li><strong>Tripod / distance</strong>: big text you can read from one or two meters</li>
+            <li><strong>Teleprompter glass</strong>: mirrored text on a solid background</li>
+            <li>Pace from 40 to 400 words per minute, a countdown, text size, spacing and color</li>
+          </ul>
+        </div>
+        <picture>
+          <source srcset="img/setup-dark.webp" media="(prefers-color-scheme: dark)">
+          <img class="shot" src="img/setup.webp" alt="Prompter settings with a live preview, setup presets and the pace in words per minute." width="600" height="1300" loading="lazy">
+        </picture>
+      </div>
+
+      <div class="feature">
+        <div class="feature-text">
+          <h3>Every script, and where it stands</h3>
+          <p>Draft, ready or recorded, with the speaking time and number of takes on each card.</p>
+          <ul class="ticks" role="list">
+            <li>Search and filter by status</li>
+            <li>Autosave and version history for every script</li>
+            <li>30 days in <em>Recently deleted</em>, and a backup file for all your scripts</li>
+            <li><em>Copy as caption</em>: the spoken text, ready to paste under your post</li>
+          </ul>
+        </div>
+        <picture>
+          <source srcset="img/library-dark.webp" media="(prefers-color-scheme: dark)">
+          <img class="shot" src="img/library.webp" alt="The script library with draft, ready and recorded scripts." width="600" height="1300" loading="lazy">
+        </picture>
+      </div>
+
+      <div class="more-grid">
+        <div>
+          <h3>Float over your camera app</h3>
+          <p>On Android, put the prompter on top of TikTok, Instagram, CapCut or your camera. Screen recordings and screen sharing show it as a blank box, so your script stays private.</p>
+        </div>
+        <div>
+          <h3>Retake just one part</h3>
+          <p>Jump to any section, pinch to resize the text without losing your place, and let recording stop by itself after the last line.</p>
+        </div>
+        <div>
+          <h3>Takes where you want them</h3>
+          <p>Save to your gallery, or keep takes inside the app, away from photo sync and cloud backups.</p>
+        </div>
+        <div>
+          <h3>Your language</h3>
+          <p>28 languages, from English and <span lang="id">Bahasa Indonesia</span> to <span lang="nl">Nederlands</span>, <span lang="es">Español</span> and <span lang="ja">日本語</span>. Works with Bluetooth remotes and keyboards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="night" aria-labelledby="privacy-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Privacy</p>
+        <h2 id="privacy-title">Your scripts stay yours</h2>
+        <p>APrompter never sends your scripts or videos anywhere. It only goes online to check APrompter Unlimited purchases. <a href="privacy/">Read the privacy policy</a>.</p>
+      </div>
+      <ul class="promises" role="list">
+        <li><strong>No account</strong><p>Nothing to sign up for. Purchases belong to your Google Play or App Store account.</p></li>
+        <li><strong>No ads</strong><p>None in the app, on the free plan or with Unlimited.</p></li>
+        <li><strong>No tracking</strong><p>No analytics or crash-reporting tools in the app.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="plans" aria-labelledby="plans-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Plans</p>
+        <h2 id="plans-title">Try everything for free</h2>
+      </div>
+      <div class="plans">
+        <div class="plan">
+          <div class="plan-head">
+            <h3>Free</h3>
+            <p>Everything you need to film your first script.</p>
+          </div>
+          <ul class="checks" role="list">
+            <li>One script of your own, plus the sample script</li>
+            <li>Every prompter, rehearsal and recording feature</li>
+            <li>Sharing, text-file export and backups</li>
+            <li>Scripts over 500 words show a reminder</li>
+          </ul>
+        </div>
+        <div class="plan paid">
+          <div class="plan-head">
+            <h3>APrompter Unlimited <span class="chip">Monthly · Yearly · Lifetime</span></h3>
+            <p>For creators who film every week.</p>
+          </div>
+          <p class="plus">Everything in Free, plus:</p>
+          <ul class="checks" role="list">
+            <li>As many scripts as you like</li>
+            <li>No reminder on long scripts</li>
+            <li>A subscription, or one payment for lifetime</li>
+            <li>Restore it on a new phone with the same store account</li>
+          </ul>
+        </div>
+      </div>
+      <p class="fine">Prices are shown in the app and the store in your currency before you buy. Depending on where you live, tax is included in the price or added at checkout. Subscriptions renew automatically until you cancel them in your store account. See the <a href="terms/">terms of use</a>.</p>
+    </div>
+  </section>
+
+  <section id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">FAQ</p>
+        <h2 id="faq-title">Questions</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Do I need an account?</summary>
+          <p>No. Open the app and start writing. If you buy APrompter Unlimited, it belongs to your Google Play or App Store account, and <em>Restore purchases</em> brings it back on a new phone.</p>
+        </details>
+        <details>
+          <summary>Does it work with TikTok, Instagram or CapCut?</summary>
+          <p>On most Android phones, yes: <em>Float</em> puts the prompter on top of your camera app. (Android Go and other low-memory phones can't float apps; there you film with <em>Record</em>.) On both Android and iPhone you can also film in APrompter itself with <em>Record</em> and post the video anywhere.</p>
+        </details>
+        <details>
+          <summary>Is there an iPhone version?</summary>
+          <p>It's built and comes after the Android release. iPhone doesn't allow apps to float over other apps, so there you film with Record.</p>
+        </details>
+        <details>
+          <summary>Where are my scripts stored?</summary>
+          <p>On your phone, inside the app. You can back them up to a file, or share a script to Notes, Drive or email whenever you like.</p>
+        </details>
+        <details>
+          <summary>Can I use a teleprompter glass or a remote?</summary>
+          <p>Yes. The <em>Teleprompter glass</em> setup mirrors the text, and Bluetooth remotes and keyboards can play, pause, change speed and jump between sections.</p>
+        </details>
+        <details>
+          <summary>How do I cancel a subscription?</summary>
+          <p>In your store account. On Android: Google Play, then Profile, Payments &amp; subscriptions, Subscriptions. On iPhone: Settings, your name, Subscriptions.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="beta-title">
+    <div class="wrap">
+      <div class="beta">
+        <p class="kicker">Android testing</p>
+        <h2 id="beta-title">Help test APrompter</h2>
+        <p>APrompter is in closed testing on Google Play. Send the email address of your Google account and you'll get an invite to install it before release.</p>
+        <div class="actions">
+          <a class="button primary" href="mailto:nightowlyyyy@gmail.com?subject=APrompter%20Android%20test&amp;body=My%20Google%20account%20email%3A%20">Join the test</a>
+          <span class="email">nightowlyyyy@gmail.com</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>APrompter by <a href="../">night owly</a></span>
+    <nav aria-label="Footer">
+      <a href="privacy/">Privacy policy</a>
+      <a href="terms/">Terms of use</a>
+      <a href="support/">Support</a>
+    </nav>
+  </div>
+</footer>
+<script>
+  // Pause or resume the moving prompter demo.
+  const toggle = document.querySelector('.motion-toggle');
+  toggle.addEventListener('click', () => {
+    const paused = toggle.getAttribute('aria-pressed') !== 'true';
+    toggle.setAttribute('aria-pressed', String(paused));
+    toggle.textContent = paused ? 'Play the demo' : 'Pause the demo';
+  });
+</script>
+</body>
+</html>

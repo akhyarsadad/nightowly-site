@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="night owly">
+  <rect width="64" height="64" rx="16" fill="#1c2046"/>
+  <path d="M14 22 L20 10 L26 19 Z M50 22 L44 10 L38 19 Z" fill="#2c3166"/>
+  <circle cx="22" cy="31" r="11" fill="#ffd54f"/>
+  <circle cx="42" cy="31" r="11" fill="#ffd54f"/>
+  <circle cx="23.5" cy="32" r="4.6" fill="#121530"/>
+  <circle cx="40.5" cy="32" r="4.6" fill="#121530"/>
+  <circle cx="25" cy="30.4" r="1.4" fill="#ffffff"/>
+  <circle cx="42" cy="30.4" r="1.4" fill="#ffffff"/>
+  <path d="M28.5 42 L32 49 L35.5 42 Z" fill="#ad91ff"/>
+</svg>

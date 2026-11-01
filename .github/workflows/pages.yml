@@ -1,0 +1,54 @@
+name: Website
+
+# Publishes site/ (the night owly website, with APrompter's privacy policy and
+# terms rendered from docs/) to GitHub Pages. One-time setup in the repository:
+# Settings → Pages → Build and deployment → Source: GitHub Actions.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - 'docs/PRIVACY.md'
+      - 'docs/TERMS.md'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - id: pages
+        uses: actions/configure-pages@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install markdown==3.7
+      # base_url is the site's address: https://<owner>.github.io/<repo> now,
+      # or the custom domain once one is set in Settings → Pages.
+      - run: python site/build.py _site --url "$SITE_URL"
+        env:
+          SITE_URL: ${{ steps.pages.outputs.base_url }}
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
