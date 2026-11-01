@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -7,10 +7,8 @@
 <meta name="robots" content="noindex">
 <link rel="icon" href="{{SITE_URL}}/assets/owl.svg" type="image/svg+xml">
 <style>
-  :root { --bg: #f5f4fb; --ink: #18152c; --muted: #57536f; --violet: #5b2fe0; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #0e1126; --ink: #edebfa; --muted: #aaa6c8; --violet: #ad91ff; color-scheme: dark; }
-  }
+  /* Always dark, like the rest of the site. */
+  :root { --bg: #0e1126; --ink: #edebfa; --muted: #aaa6c8; --violet: #ad91ff; color-scheme: dark; }
   body {
     margin: 0; min-height: 100vh; display: grid; place-items: center; text-align: center;
     background: var(--bg); color: var(--ink);

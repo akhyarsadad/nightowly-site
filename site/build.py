@@ -90,14 +90,13 @@ BARE_URL = re.compile(r"(?<![<(\"'=])\b(https?://[^\s<>()]+[^\s<>().,;:!?])")
 BARE_EMAIL = re.compile(r"(?<![<\w.@/])([\w.+-]+@[\w-]+(?:\.[\w-]+)+)(?![\w>])")
 
 TEMPLATE = """<!doctype html>
-<html lang="{lang}">
+<html lang="{lang}" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{title}</title>
 <meta name="description" content="{description}">
-<meta name="theme-color" content="#f5f4fb" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0e1126" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#0e1126">
 <link rel="icon" href="{icons}icon-64.png" type="image/png">
 <link rel="apple-touch-icon" href="{icons}icon-180.png">
 <link rel="stylesheet" href="{root}assets/site.css">{extra_head}

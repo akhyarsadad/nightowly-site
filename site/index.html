@@ -1,12 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>night owly</title>
 <meta name="description" content="I'm a product developer based in the Netherlands, and the person behind night owly. I build mobile apps on my own: a teleprompter for people who film themselves, and a Dutch course. No accounts, ads or tracking.">
-<meta name="theme-color" content="#f5f4fb" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0e1126" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#0e1126">
 <link rel="icon" href="assets/owl.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/owl-180.png">
 <link rel="preload" href="assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
@@ -56,6 +55,8 @@
     place-items: end center;
     padding-bottom: 12%;
     box-shadow: 0 30px 60px -30px rgb(18 21 48 / 0.6);
+    /* The page is dark too, so a faint edge keeps the tile's shape. */
+    border: 1px solid var(--line);
   }
   .owl-stage svg {
     width: 58%;
