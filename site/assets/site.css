@@ -44,6 +44,7 @@
   --muted: #57536f;
   --line: #dcd8ec;
   --violet: #5b2fe0;
+  --orange: #c2410c; /* the current item in a menu */
   --violet-soft: #ebe5ff;
   --moon: #e3a600;
   --night: #121530;
@@ -79,6 +80,7 @@
     --muted: #aaa6c8;
     --line: #2a2f55;
     --violet: #ad91ff;
+    --orange: #fb923c;
     --violet-soft: #251f4d;
     --moon: #ffd54f;
     --night: #0a0c1e;
@@ -89,6 +91,7 @@
 }
 :root[data-theme="dark"] {
   --bg: #0e1126;
+  --orange: #fb923c;
   --surface: #161a36;
   --ink: #edebfa;
   --muted: #aaa6c8;
@@ -262,7 +265,7 @@ p {
   color: var(--ink);
 }
 .nav a[aria-current="page"] {
-  color: var(--ink);
+  color: var(--orange);
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 6px;
