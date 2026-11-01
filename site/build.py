@@ -26,7 +26,6 @@ import markdown
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "site"
-REPO = "https://github.com/akhyarsadad/nightowly-site"
 
 # One entry per app and language: where its pages live and what they are called.
 APPS = {
@@ -38,10 +37,6 @@ APPS = {
         "footer": ("Privacy policy", "Terms of use", "Support"),
         "by": "APrompter by",
         "skip": "Skip to content",
-        "note": (
-            'This page shows <a href="{source_url}">{source}</a> from the night owly\n'
-            "      website repository, where every change to it is recorded."
-        ),
     },
     ("dutchy", "en"): {
         "name": "Dutchy",
@@ -51,10 +46,6 @@ APPS = {
         "footer": ("Privacy statement", "Terms of use", "Support"),
         "by": "Dutchy by",
         "skip": "Skip to content",
-        "note": (
-            'Every change to this page is recorded in the\n'
-            '      <a href="{source_url}">night owly website repository</a>.'
-        ),
         "alt": ("nl", "Nederlands"),
         "css": "dutchy/dutchy.css",
     },
@@ -66,10 +57,6 @@ APPS = {
         "footer": ("Privacyverklaring", "Gebruiksvoorwaarden", "Support"),
         "by": "Dutchy van",
         "skip": "Ga naar de inhoud",
-        "note": (
-            'Elke wijziging aan deze pagina wordt bijgehouden in de\n'
-            '      <a href="{source_url}">repository van de night owly-website</a>.'
-        ),
         "alt": ("en", "English"),
         "css": "dutchy/dutchy.css",
     },
@@ -139,7 +126,6 @@ TEMPLATE = """<!doctype html>
   <div class="wrap">
     <article>
 {body}
-      <p class="source-note">{note}</p>
     </article>
   </div>
 </main>
@@ -228,7 +214,6 @@ def render(page: dict) -> str:
         )
     labels = app["nav"]
     footer = app["footer"]
-    source_url = f"{REPO}/blob/main/{page['source']}"
     return TEMPLATE.format(
         lang=page["lang"],
         title=html.escape(page["title"]),
@@ -249,7 +234,6 @@ def render(page: dict) -> str:
         terms_current=' aria-current="page"' if page["nav"] == "terms" else "",
         lang_switch=lang_switch,
         body=body,
-        note=app["note"].format(source=html.escape(page["source"]), source_url=source_url),
         by=app["by"],
         footer_privacy=footer[0],
         footer_terms=footer[1],

@@ -438,11 +438,6 @@ section {
   font-family: var(--font-mono);
   font-size: 0.9em;
 }
-.source-note {
-  color: var(--muted);
-  font-size: var(--step--1);
-}
-
 /* Support pages: the email box and numbered steps. */
 .contact-box {
   display: grid;
