@@ -1,6 +1,6 @@
 # Privacy Statement
 
-*Last updated: 10 November 2026*
+*Last updated: 11 November 2026*
 
 ## The short version
 
@@ -20,7 +20,7 @@ Dutchy itself records nothing and keeps no audio, not even briefly.
 
 ## Text to speech
 
-Reading Dutch sentences aloud uses your device's own voices. Some platforms also offer cloud voices; you choose which voice to use in Settings, where the local ones are marked.
+Dutchy reads Dutch aloud with recordings of a natural voice. The recordings for A1 and A2 are inside the app. Those for the other levels are downloaded only if you choose to, from our website (nightowly.dev, which is hosted by GitHub). During such a download GitHub sees your IP address, as with any visit to a website; nothing about you or your progress is sent along. Where there is no recording, Dutchy uses your device's own voices. Some platforms also offer cloud voices; you choose which voice to use in Settings, where the local ones are marked.
 
 ## What is stored on your device
 
