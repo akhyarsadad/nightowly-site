@@ -22,6 +22,10 @@ Dutchy neemt zelf niets op en bewaart geen audio, ook niet tijdelijk.
 
 Dutchy leest Nederlands voor met opnames van een natuurlijke stem. De opnames voor A1 en A2 zitten in de app. Die voor de andere niveaus download je alleen als je daarvoor kiest, van onze website (nightowly.dev, die bij GitHub staat). Bij zo’n download ziet GitHub je IP-adres, zoals bij elk bezoek aan een website; over jou of je voortgang gaat er niets mee. Waar geen opname is, gebruikt Dutchy de stemmen van je apparaat. Sommige platforms bieden ook stemmen aan die in de cloud draaien; welke stem je gebruikt kies je in Instellingen, en daar staat erbij welke lokaal zijn.
 
+## AI-feedback
+
+In Examen kun je een schrijf- of spreekantwoord door AI laten nakijken. Dat gebeurt alleen als je erom vraagt, en de eerste keer vraagt Dutchy eerst je toestemming. Dan gaan de opdracht en jouw tekst (bij spreken: wat je telefoon hoorde) via onze server bij Cloudflare naar de AI-dienst die nakijkt. De app noemt die dienst en het land voordat je akkoord gaat, en vraagt het opnieuw als de dienst verandert. Nu is dat DeepSeek, in China: een land buiten de EU waar je gegevens minder beschermd zijn dan hier, en daarom vragen we je uitdrukkelijke toestemming. Wat DeepSeek met de tekst doet, valt onder hun voorwaarden. Je naam, je voortgang en je installatienummer gaan niet mee. Onze server bewaart je tekst niet; hij telt alleen hoeveel controles er per dag zijn, per netwerkadres als een code die één dag blijft. Zet geen echte persoonsgegevens in een tekst die je laat nakijken.
+
 ## Wat er op je apparaat staat
 
 In de opslag van je browser of app bewaart Dutchy: je voortgang en herhalingsschema, je instellingen, je woordenbank en aantekeningen, je geschreven teksten, je uitspraakprofiel per klank, en je naam als je die hebt ingevuld.

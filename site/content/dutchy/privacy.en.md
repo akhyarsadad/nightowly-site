@@ -22,6 +22,10 @@ Dutchy itself records nothing and keeps no audio, not even briefly.
 
 Dutchy reads Dutch aloud with recordings of a natural voice. The recordings for A1 and A2 are inside the app. Those for the other levels are downloaded only if you choose to, from our website (nightowly.dev, which is hosted by GitHub). During such a download GitHub sees your IP address, as with any visit to a website; nothing about you or your progress is sent along. Where there is no recording, Dutchy uses your device's own voices. Some platforms also offer cloud voices; you choose which voice to use in Settings, where the local ones are marked.
 
+## AI feedback
+
+In Examen you can have a writing or speaking answer checked by AI. That happens only when you ask for it, and the first time Dutchy asks for your consent first. The task and your text (for speaking: what your phone heard) then go through our server at Cloudflare to the AI service that does the checking. The app names that service and its country before you agree, and asks again if the service changes. At present it is DeepSeek, in China: a country outside the EU where your data is less protected than here, which is why we ask for your explicit consent. What DeepSeek does with the text falls under their terms. Your name, your progress and your install number are not sent. Our server does not keep your text; it only counts how many checks there are per day, per network address as a code that lasts one day. Do not put real personal details in a text you have checked.
+
 ## What is stored on your device
 
 In your browser's or app's storage, Dutchy keeps: your progress and review schedule, your settings, your word bank and notes, the texts you have written, your per-sound pronunciation profile, and your name if you entered one.
