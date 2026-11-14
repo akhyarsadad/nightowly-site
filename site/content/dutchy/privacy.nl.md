@@ -1,6 +1,6 @@
 # Privacyverklaring
 
-*Laatst bijgewerkt: 11 november 2026*
+*Laatst bijgewerkt: 14 november 2026*
 
 ## De korte versie
 
@@ -20,7 +20,7 @@ Dutchy neemt zelf niets op en bewaart geen audio, ook niet tijdelijk.
 
 ## Voorlezen
 
-Dutchy leest Nederlands voor met opnames van een natuurlijke stem. De opnames voor A1 en A2 zitten in de app. Die voor de andere niveaus download je alleen als je daarvoor kiest, van onze website (nightowly.dev, die bij GitHub staat). Bij zo’n download ziet GitHub je IP-adres, zoals bij elk bezoek aan een website; over jou of je voortgang gaat er niets mee. Waar geen opname is, gebruikt Dutchy de stemmen van je apparaat. Sommige platforms bieden ook stemmen aan die in de cloud draaien; welke stem je gebruikt kies je in Instellingen, en daar staat erbij welke lokaal zijn.
+Dutchy leest Nederlands voor met opnames van een natuurlijke stem. De opnames voor A1 zitten in de app. Die voor A2 tot en met C2 download je alleen als je daarvoor kiest, van onze website (nightowly.dev, die bij GitHub staat). Bij zo’n download ziet GitHub je IP-adres, zoals bij elk bezoek aan een website; over jou of je voortgang gaat er niets mee. Waar geen opname is, gebruikt Dutchy de stemmen van je apparaat. Sommige platforms bieden ook stemmen aan die in de cloud draaien; welke stem je gebruikt kies je in Instellingen, en daar staat erbij welke lokaal zijn.
 
 ## AI-feedback
 
