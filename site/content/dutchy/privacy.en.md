@@ -1,6 +1,6 @@
 # Privacy Statement
 
-*Last updated: 14 November 2026*
+*Last updated: 15 November 2026*
 
 ## The short version
 
@@ -24,7 +24,7 @@ Dutchy reads Dutch aloud with recordings of a natural voice. The recordings for 
 
 ## AI feedback
 
-In Examen you can have a writing or speaking answer checked by AI. That happens only when you ask for it, and the first time Dutchy asks for your consent first. The task and your text (for speaking: what your phone heard) then go through our server at Cloudflare to the AI service that does the checking. The app names that service and its country before you agree, and asks again if the service changes. At present it is DeepSeek, in China: a country outside the EU where your data is less protected than here, which is why we ask for your explicit consent. What DeepSeek does with the text falls under their terms. Your name, your progress and your install number are not sent. Our server does not keep your text; it only counts how many checks there are per day, per network address as a code that lasts one day. Do not put real personal details in a text you have checked.
+In Examen you can have a writing or speaking answer checked by AI. That happens only when you ask for it, and the first time Dutchy asks for your consent first. The task and your text (for speaking: what your phone heard) then go through our server at Cloudflare to the AI service that does the checking. The app names that service and its country before you agree, and asks again if the service changes. At present it is DeepSeek, in China: a country outside the EU where your data is less protected than here, which is why we ask for your explicit consent. What DeepSeek does with the text falls under their terms. Your name, your progress and your install number are not sent. Our server does not keep your text; it only counts how many checks there are per day, per network address as a code that lasts one day. For each check it sends PostHog (see Usage statistics) technical data only: which AI model, how long it took, how much text went in and came out, and whether it worked; never the task, your text or the feedback. Do not put real personal details in a text you have checked.
 
 ## What is stored on your device
 
@@ -36,11 +36,11 @@ You can export all of it to a file and erase all of it, both from Settings. Eras
 
 ## Usage statistics
 
-To see where the course works and where people get stuck, the app sends short notes of what happens to PostHog (PostHog, Inc., United States), a product analytics service. We use PostHog’s EU environment, which stores the data in the EU (Frankfurt). Such a note says: the app opened; you finished the introduction, a lesson, a review or a round, with how many were right first time and how much XP; you saw the subscription screen or subscribed; the app asked the store for a rating; or you gave a thumbs up or down after a lesson.
+To see where the course works and where people get stuck, the app sends data about its use to PostHog (PostHog, Inc., United States), a product analytics service. We use PostHog’s EU environment, which stores the data in the EU (Frankfurt). There are three kinds. First, short notes of what happens: the app opened; you finished the introduction, a lesson, a review or a round, with how many were right first time and how much XP; you started or ended a practice exam; you saw the subscription screen or subscribed; the app asked the store for a rating; or you gave a thumbs up or down after a lesson. Second, automatically: which screens you open and which buttons you tap, with the text on that button, but never what you type. Third, error reports: when the app runs into an unexpected error, the technical description of that error is sent. No screen recordings are made.
 
-Each note carries the app version, the kind of device (iPhone, Android or web), your level, whether you subscribe, and a random number made for this install, so we can see how far people get. If you entered a creator’s code (or came through a link with one), it is there too, so we know through whom people find Dutchy. Never your name, your email address, your answers, your notes, your word lists or your texts. After a thumbs down you may type a short comment yourself; it is sent with it, so please leave personal details out.
+Each note carries the app version, the kind of device (iPhone, Android or web) with its operating system, screen size and language setting, your level, whether you subscribe, and a random number made for this install, so we can see how far people get. If you entered a creator’s code (or came through a link with one), it is there too, so we know through whom people find Dutchy. Never your name, your email address, your answers, your notes, your word lists or your texts. After a thumbs down you may type a short comment yourself; it is sent with it, so please leave personal details out.
 
-Like any server you connect to, PostHog sees your IP address. The app asks PostHog not to derive a location from it.
+Like any server you connect to, PostHog sees your IP address. PostHog derives a rough location from it, the country and the city, and adds it to the notes. The app never asks for your precise location.
 
 Legal basis (GDPR): our legitimate interest in improving the course. You can turn this off at any time in Settings → Je gegevens en back-up → Help Dutchy beter maken. The app then sends no more statistics, and anything still waiting is dropped.
 

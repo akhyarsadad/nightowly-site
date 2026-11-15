@@ -1,6 +1,6 @@
 # Privacyverklaring
 
-*Laatst bijgewerkt: 14 november 2026*
+*Laatst bijgewerkt: 15 november 2026*
 
 ## De korte versie
 
@@ -24,7 +24,7 @@ Dutchy leest Nederlands voor met opnames van een natuurlijke stem. De opnames vo
 
 ## AI-feedback
 
-In Examen kun je een schrijf- of spreekantwoord door AI laten nakijken. Dat gebeurt alleen als je erom vraagt, en de eerste keer vraagt Dutchy eerst je toestemming. Dan gaan de opdracht en jouw tekst (bij spreken: wat je telefoon hoorde) via onze server bij Cloudflare naar de AI-dienst die nakijkt. De app noemt die dienst en het land voordat je akkoord gaat, en vraagt het opnieuw als de dienst verandert. Nu is dat DeepSeek, in China: een land buiten de EU waar je gegevens minder beschermd zijn dan hier, en daarom vragen we je uitdrukkelijke toestemming. Wat DeepSeek met de tekst doet, valt onder hun voorwaarden. Je naam, je voortgang en je installatienummer gaan niet mee. Onze server bewaart je tekst niet; hij telt alleen hoeveel controles er per dag zijn, per netwerkadres als een code die één dag blijft. Zet geen echte persoonsgegevens in een tekst die je laat nakijken.
+In Examen kun je een schrijf- of spreekantwoord door AI laten nakijken. Dat gebeurt alleen als je erom vraagt, en de eerste keer vraagt Dutchy eerst je toestemming. Dan gaan de opdracht en jouw tekst (bij spreken: wat je telefoon hoorde) via onze server bij Cloudflare naar de AI-dienst die nakijkt. De app noemt die dienst en het land voordat je akkoord gaat, en vraagt het opnieuw als de dienst verandert. Nu is dat DeepSeek, in China: een land buiten de EU waar je gegevens minder beschermd zijn dan hier, en daarom vragen we je uitdrukkelijke toestemming. Wat DeepSeek met de tekst doet, valt onder hun voorwaarden. Je naam, je voortgang en je installatienummer gaan niet mee. Onze server bewaart je tekst niet; hij telt alleen hoeveel controles er per dag zijn, per netwerkadres als een code die één dag blijft. Per controle stuurt hij PostHog (zie Gebruiksstatistieken) alleen technische gegevens: welk AI-model, hoe lang het duurde, hoeveel tekst erin en eruit ging en of het lukte; nooit de opdracht, je tekst of de feedback. Zet geen echte persoonsgegevens in een tekst die je laat nakijken.
 
 ## Wat er op je apparaat staat
 
@@ -36,11 +36,11 @@ Je kunt alles exporteren naar een bestand en alles wissen, allebei vanuit Instel
 
 ## Gebruiksstatistieken
 
-Om te zien waar de cursus werkt en waar mensen vastlopen, stuurt de app korte meldingen van wat er gebeurt naar PostHog (PostHog, Inc., Verenigde Staten), een dienst voor productstatistieken. Wij gebruiken de EU-omgeving van PostHog, waar de gegevens in de EU (Frankfurt) worden opgeslagen. Zo’n melding zegt: de app ging open; je rondde de introductie, een les, een herhaling of een ronde af, met hoeveel er in één keer goed was en hoeveel XP; je zag het abonnementsscherm of nam een abonnement; de app vroeg de store om een beoordeling; of je gaf een duim omhoog of omlaag na een les.
+Om te zien waar de cursus werkt en waar mensen vastlopen, stuurt de app gegevens over het gebruik naar PostHog (PostHog, Inc., Verenigde Staten), een dienst voor productstatistieken. Wij gebruiken de EU-omgeving van PostHog, waar de gegevens in de EU (Frankfurt) worden opgeslagen. Het gaat om drie soorten gegevens. Ten eerste korte meldingen van wat er gebeurt: de app ging open; je rondde de introductie, een les, een herhaling of een ronde af, met hoeveel er in één keer goed was en hoeveel XP; je begon of beëindigde een oefenexamen; je zag het abonnementsscherm of nam een abonnement; de app vroeg de store om een beoordeling; of je gaf een duim omhoog of omlaag na een les. Ten tweede, automatisch: welke schermen je opent en op welke knoppen je tikt, met de tekst op die knop, maar nooit wat je zelf typt. Ten derde foutmeldingen: als de app onverwacht een fout tegenkomt, gaat de technische beschrijving van die fout mee. Er worden geen schermopnames gemaakt.
 
-Bij elke melding staan de appversie, het soort apparaat (iPhone, Android of web), je niveau, of je een abonnement hebt, en een willekeurig nummer dat voor deze installatie is gemaakt, zodat we kunnen zien hoe ver mensen komen. Heb je de code van een creator ingevuld (of kwam je via een link met zo’n code), dan staat die er ook bij, zodat we weten via wie mensen Dutchy vinden. Nooit je naam, je e-mailadres, je antwoorden, je aantekeningen, je woordenlijsten of je teksten. Bij een duim omlaag kun je zelf een korte toelichting typen; die gaat mee, dus zet er geen persoonsgegevens in.
+Bij elke melding staan de appversie, het soort apparaat (iPhone, Android of web) met het besturingssysteem, de schermgrootte en de taalinstelling, je niveau, of je een abonnement hebt, en een willekeurig nummer dat voor deze installatie is gemaakt, zodat we kunnen zien hoe ver mensen komen. Heb je de code van een creator ingevuld (of kwam je via een link met zo’n code), dan staat die er ook bij, zodat we weten via wie mensen Dutchy vinden. Nooit je naam, je e-mailadres, je antwoorden, je aantekeningen, je woordenlijsten of je teksten. Bij een duim omlaag kun je zelf een korte toelichting typen; die gaat mee, dus zet er geen persoonsgegevens in.
 
-Zoals elke server waarmee je verbinding maakt, ziet PostHog je IP-adres. De app vraagt PostHog daar geen locatie van af te leiden.
+Zoals elke server waarmee je verbinding maakt, ziet PostHog je IP-adres. PostHog leidt daar een grove locatie van af, het land en de stad, en zet die bij de meldingen. Je precieze locatie vraagt de app nooit op.
 
 Grondslag (AVG): ons gerechtvaardigd belang om de cursus te verbeteren. Je kunt dit altijd uitzetten in Instellingen → Je gegevens en back-up → Help Dutchy beter maken. Daarna verstuurt de app geen statistieken meer en vervalt wat nog wachtte.
 
