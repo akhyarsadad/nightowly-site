@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+# The voice packs the Dutchy app downloads: sound for the app, nothing to read.
+Disallow: /dutchy/voices/
