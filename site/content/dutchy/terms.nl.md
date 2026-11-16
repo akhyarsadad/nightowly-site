@@ -1,6 +1,6 @@
 # Gebruiksvoorwaarden
 
-*Laatst bijgewerkt: 1 november 2026*
+*Laatst bijgewerkt: 14 november 2026*
 
 ## Wie Dutchy aanbiedt
 
@@ -22,9 +22,9 @@ Er zitten geen advertenties in de app en er is geen versie met advertenties.
 
 ## Het abonnement
 
-Dutchy Volledig kost € 9,99 per drie maanden en geeft toegang tot A2 tot en met C2, de gespreksoefeningen boven A1, de oefenexamens en het hele verhaal. In andere landen geldt de prijs die de store daar toont.
+Dutchy Volledig kost € 14,99 per drie maanden en geeft toegang tot A2 tot en met C2, de gespreksoefeningen boven A1, de oefenexamens en het hele verhaal. In andere landen geldt de prijs die de store daar toont.
 
-Je betaalt € 9,99 per drie maanden, de eerste keer meteen bij het afsluiten. Er is geen gratis proefperiode. Neem je voor het eerst een abonnement, dan krijg je er één keer een bonusmaand (30 dagen) toegang bij: 3+1. De app voegt die maand toe zodra je laatste betaalde periode is afgelopen: blijf je verlengen, dan gaat de bonusmaand pas in nadat je abonnement is gestopt. De store weet niets van de bonusmaand. De bonusmaand verschuift je verlenging niet: de store verlengt gewoon na drie maanden, en wie dan nog niet heeft opgezegd, betaalt weer € 9,99. De bonusmaand geldt één keer per apparaat; installeer je de app opnieuw, dan weet de app misschien niet meer dat je de bonusmaand al hebt gehad. Is er een betaalprobleem, of komt je toegang niet via de store, dan geldt de bonusmaand niet.
+Neem je voor het eerst een abonnement, dan betaal je voor je eerste drie maanden € 9,99. Dat kan één keer per App Store- of Google Play-account. Daarna betaal je € 14,99 per drie maanden. Je betaalt de eerste keer meteen bij het afsluiten. Er is geen gratis proefperiode. Een promotiecode kan wel een gratis periode geven; wat een code geeft, zie je in de store voordat je hem inwisselt.
 
 Het abonnement verlengt automatisch met drie maanden, tenzij je minstens 24 uur voor het einde van de lopende periode opzegt. De betaling wordt binnen 24 uur voor de verlenging van je account afgeschreven.
 

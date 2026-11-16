@@ -1,6 +1,6 @@
 # Terms of Use
 
-*Last updated: 1 November 2026*
+*Last updated: 14 November 2026*
 
 ## Who provides Dutchy
 
@@ -22,9 +22,9 @@ There are no adverts in the app and there is no advert-supported version.
 
 ## The subscription
 
-Dutchy Volledig costs €9.99 per three months and unlocks A2 through C2, the conversation practice above A1, the practice exams and the rest of the story. In other countries the price is whatever the store shows there.
+Dutchy Volledig costs €14.99 per three months and unlocks A2 through C2, the conversation practice above A1, the practice exams and the rest of the story. In other countries the price is whatever the store shows there.
 
-You pay €9.99 every three months, the first time right when you subscribe. There is no free trial. If you subscribe for the first time, you get a one-time bonus month (30 days) of access on top: 3+1 (three paid months plus one bonus month). The app adds it after your last paid period has ended: if you keep renewing, the bonus month only starts after your subscription has stopped. The store knows nothing about the bonus month. The bonus month does not move your renewal: the store simply renews after three months, and if you have not cancelled by then you pay €9.99 again. The bonus month applies once per device; if you reinstall the app, it may no longer know you already had it. If there is a payment problem, or your access does not come through the store, the bonus month does not apply.
+If you subscribe for the first time, your first three months cost €9.99. This applies once per App Store or Google Play account. After that you pay €14.99 every three months. You pay the first time right when you subscribe. There is no free trial. A promotional code can give you a free period; the store shows what a code gives before you redeem it.
 
 The subscription renews automatically for another three months unless you cancel at least 24 hours before the current period ends. Payment is taken from your account within 24 hours before renewal.
 
