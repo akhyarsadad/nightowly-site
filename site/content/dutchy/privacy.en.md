@@ -1,10 +1,10 @@
 # Privacy Statement
 
-*Last updated: 17 November 2026*
+*Last updated: 21 November 2026*
 
 ## The short version
 
-Dutchy has no account and no adverts, and does not track you across other apps or websites. Your progress, notes and word lists live on your own device. What the app sends: usage statistics including screen recordings, without your name (below; you can turn them off in Settings), the purchase check under Payments, and your phone’s speech recognition when that works online.
+Dutchy has no account and no adverts, and does not track you across other apps or websites. Your progress, notes and word lists live on your own device. What the app sends: usage statistics including screen recordings, without your name, but only if you say yes (below; you can turn them off again in Settings at any time), the purchase check under Payments, and your phone’s speech recognition when that works online.
 
 Two things deserve an honest explanation, and they are below: speech recognition does not always happen on your device, and the app sends usage statistics to PostHog.
 
@@ -36,13 +36,13 @@ You can export all of it to a file and erase all of it, both from Settings. Eras
 
 ## Usage statistics
 
-To see where the course works and where people get stuck, the app sends data about its use to PostHog (PostHog, Inc., United States), a product analytics service. We use PostHog’s EU environment, which stores the data in the EU (Frankfurt). There are five kinds. First, short notes of what happens: the app opened; you finished the introduction, a lesson, a review or a round, with how many were right first time and how much XP; you started or ended a practice exam; you saw the subscription screen or subscribed; the app asked the store for a rating; or you gave a thumbs up or down after a lesson. Second, automatically: which screens you open, how long you stay on them, where you tap and scroll (also for heatmaps: maps of where on a screen people tap), with the text on buttons and links. Third, screen recordings: a recording of what happens on the app’s screen, so we can see where someone gets stuck. What you type into text fields is masked in those recordings and not recorded. Recordings are kept for 30 days. Fourth, technical data: error reports, including from the app’s console, how fast screens load and how long the app’s network requests take. Fifth, if we ever run one: short in-app surveys, which you may skip; your answers then go to PostHog.
+Only if you say yes to the question ‘Help je Dutchy beter maken?’, which the app asks on first use, does it send data about its use to PostHog. Say no, or close the question, and nothing is sent and the app does not even load PostHog. What for: to see where the course works and where people get stuck. The data goes to PostHog (PostHog, Inc., United States), a product analytics service. We use PostHog’s EU environment, which stores the data in the EU (Frankfurt). There are five kinds. First, short notes of what happens: the app opened; you finished the introduction, a lesson, a review or a round, with how many were right first time and how much XP; you started or ended a practice exam; you saw the subscription screen or subscribed; the app asked the store for a rating; or you gave a thumbs up or down after a lesson. Second, automatically: which screens you open, how long you stay on them, where you tap and scroll (also for heatmaps: maps of where on a screen people tap), with the text on buttons and links. Third, screen recordings: a recording of what happens on the app’s screen, so we can see where someone gets stuck. What you type into text fields is masked in those recordings and not recorded. Recordings are kept for 30 days. Fourth, technical data: error reports, including from the app’s console, how fast screens load and how long the app’s network requests take. Fifth, if we ever run one: short in-app surveys, which you may skip; your answers then go to PostHog.
 
 Each note carries the app version, the kind of device (iPhone, Android or web) with its operating system, screen size and language setting, your level, whether you subscribe, and a random number made for this install. PostHog keeps a profile under that number with your level, whether you subscribe, the app version and the kind of device, so we can see how far people get. If you entered a creator’s code (or came through a link with one), it is there too, so we know through whom people find Dutchy. Never your name or your email address, and apart from what a screen recording shows never your answers, your notes, your word lists or your texts. After a thumbs down you may type a short comment yourself; it is sent with it, so please leave personal details out.
 
 Like any server you connect to, PostHog sees your IP address. PostHog derives a rough location from it, the country and the city, and adds it to the notes. The app never asks for your precise location.
 
-Legal basis (GDPR): our legitimate interest in improving the course. You can turn this off at any time in Settings → Je gegevens en back-up → Help Dutchy beter maken. The app then sends no more statistics, and anything still waiting is dropped.
+Legal basis: your consent (GDPR Article 6(1)(a), and Article 11.7a of the Dutch Telecommunications Act). You withdraw it as easily as you gave it: Settings → Je gegevens en back-up → Help Dutchy beter maken. The app then sends no more statistics, and anything still waiting is dropped. What was already sent, we delete on request (see Your rights).
 
 PostHog handles this data only to provide its service to us, under its data processing terms, and keeps it for as long as we use its service. PostHog’s own policy: https://posthog.com/privacy
 
@@ -74,13 +74,13 @@ If something about a question seems wrong, you can report it at your answer with
 
 ## Cookies and tracking
 
-Dutchy sets no cookies and contains no advertising or tracking code: nobody follows you through Dutchy across other apps or websites. The usage statistics above keep their random install number and their queue in the app’s storage, only for our own figures. The app loads no course content from the internet while you use it: the whole course is in the file you downloaded. The network traffic is the purchase check under Payments, the usage statistics when they are on, and your phone’s speech recognition when that works online.
+Dutchy sets no cookies and contains no advertising or tracking code: nobody follows you through Dutchy across other apps or websites. The usage statistics above keep, only after your yes, their random install number and their queue in the app’s storage, only for our own figures. The app loads no course content from the internet while you use it: the whole course is in the file you downloaded. The network traffic is the purchase check under Payments, the usage statistics when they are on, and your phone’s speech recognition when that works online.
 
-There is no cookie banner: there are no cookies, and you turn the statistics off in Settings.
+Instead of a cookie banner, the app asks on first use whether you want to share the statistics. Yes and no carry equal weight; without a yes nothing is stored or sent.
 
 ## Children
 
-Dutchy is suitable for all ages and asks nobody for a name, email address or other details, children included. All that is sent is the purchase check under Payments and the usage statistics, which you turn off in Settings.
+Dutchy is meant for adults (18 and over) and is listed that way in the app stores. The app asks nobody for a name, email address or other details. All that is sent is the purchase check under Payments and, after your yes, the usage statistics. If you know a child used the app and shared data, email us and we will delete it.
 
 ## Your rights
 

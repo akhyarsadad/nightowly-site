@@ -1,10 +1,10 @@
 # Privacyverklaring
 
-*Laatst bijgewerkt: 17 november 2026*
+*Laatst bijgewerkt: 21 november 2026*
 
 ## De korte versie
 
-Dutchy heeft geen account en geen advertenties, en volgt je niet over andere apps of websites. Je voortgang, je aantekeningen en je woordenlijsten staan op je eigen apparaat. Wat de app verstuurt: gebruiksstatistieken met schermopnames, zonder je naam (hieronder; uit te zetten in Instellingen), de aankoopcontrole onder Betalingen, en de spraakherkenning van je telefoon als die online werkt.
+Dutchy heeft geen account en geen advertenties, en volgt je niet over andere apps of websites. Je voortgang, je aantekeningen en je woordenlijsten staan op je eigen apparaat. Wat de app verstuurt: gebruiksstatistieken met schermopnames, zonder je naam, maar alleen als je daar ja op zegt (hieronder; altijd weer uit te zetten in Instellingen), de aankoopcontrole onder Betalingen, en de spraakherkenning van je telefoon als die online werkt.
 
 Twee dingen verdienen een eerlijke uitleg, en die staan hieronder: spraakherkenning gebeurt niet altijd op je toestel, en de app stuurt gebruiksstatistieken naar PostHog.
 
@@ -36,13 +36,13 @@ Je kunt alles exporteren naar een bestand en alles wissen, allebei vanuit Instel
 
 ## Gebruiksstatistieken
 
-Om te zien waar de cursus werkt en waar mensen vastlopen, stuurt de app gegevens over het gebruik naar PostHog (PostHog, Inc., Verenigde Staten), een dienst voor productstatistieken. Wij gebruiken de EU-omgeving van PostHog, waar de gegevens in de EU (Frankfurt) worden opgeslagen. Het gaat om vijf soorten gegevens. Ten eerste korte meldingen van wat er gebeurt: de app ging open; je rondde de introductie, een les, een herhaling of een ronde af, met hoeveel er in één keer goed was en hoeveel XP; je begon of beëindigde een oefenexamen; je zag het abonnementsscherm of nam een abonnement; de app vroeg de store om een beoordeling; of je gaf een duim omhoog of omlaag na een les. Ten tweede, automatisch: welke schermen je opent, hoe lang je erop blijft, waar je tikt en scrolt (ook voor heatmaps: kaarten van waar op een scherm getikt wordt), met de tekst op knoppen en links. Ten derde schermopnames: een opname van wat er op het scherm van de app gebeurt, zodat we kunnen zien waar iemand vastloopt. Wat je zelf typt in tekstvelden wordt in die opnames afgeschermd en niet opgenomen. Opnames worden 30 dagen bewaard. Ten vierde technische gegevens: foutmeldingen, ook uit de console van de app, hoe snel schermen laden en hoe lang verzoeken van de app over het netwerk duren. Ten vijfde, als wij die ooit inzetten: korte vragenlijsten in de app, die je mag overslaan; je antwoorden gaan dan naar PostHog.
+Alleen als je ja zegt op de vraag ‘Help je Dutchy beter maken?’, die de app bij het eerste gebruik stelt, stuurt de app gegevens over het gebruik naar PostHog. Zeg je nee, of sluit je de vraag, dan gaat er niets weg en laadt de app PostHog niet eens. Waarvoor: om te zien waar de cursus werkt en waar mensen vastlopen. De gegevens gaan naar PostHog (PostHog, Inc., Verenigde Staten), een dienst voor productstatistieken. Wij gebruiken de EU-omgeving van PostHog, waar de gegevens in de EU (Frankfurt) worden opgeslagen. Het gaat om vijf soorten gegevens. Ten eerste korte meldingen van wat er gebeurt: de app ging open; je rondde de introductie, een les, een herhaling of een ronde af, met hoeveel er in één keer goed was en hoeveel XP; je begon of beëindigde een oefenexamen; je zag het abonnementsscherm of nam een abonnement; de app vroeg de store om een beoordeling; of je gaf een duim omhoog of omlaag na een les. Ten tweede, automatisch: welke schermen je opent, hoe lang je erop blijft, waar je tikt en scrolt (ook voor heatmaps: kaarten van waar op een scherm getikt wordt), met de tekst op knoppen en links. Ten derde schermopnames: een opname van wat er op het scherm van de app gebeurt, zodat we kunnen zien waar iemand vastloopt. Wat je zelf typt in tekstvelden wordt in die opnames afgeschermd en niet opgenomen. Opnames worden 30 dagen bewaard. Ten vierde technische gegevens: foutmeldingen, ook uit de console van de app, hoe snel schermen laden en hoe lang verzoeken van de app over het netwerk duren. Ten vijfde, als wij die ooit inzetten: korte vragenlijsten in de app, die je mag overslaan; je antwoorden gaan dan naar PostHog.
 
 Bij elke melding staan de appversie, het soort apparaat (iPhone, Android of web) met het besturingssysteem, de schermgrootte en de taalinstelling, je niveau, of je een abonnement hebt, en een willekeurig nummer dat voor deze installatie is gemaakt. Bij dat nummer houdt PostHog een profiel bij met je niveau, of je een abonnement hebt, de appversie en het soort apparaat, zodat we kunnen zien hoe ver mensen komen. Heb je de code van een creator ingevuld (of kwam je via een link met zo’n code), dan staat die er ook bij, zodat we weten via wie mensen Dutchy vinden. Nooit je naam of je e-mailadres, en buiten wat een schermopname laat zien nooit je antwoorden, je aantekeningen, je woordenlijsten of je teksten. Bij een duim omlaag kun je zelf een korte toelichting typen; die gaat mee, dus zet er geen persoonsgegevens in.
 
 Zoals elke server waarmee je verbinding maakt, ziet PostHog je IP-adres. PostHog leidt daar een grove locatie van af, het land en de stad, en zet die bij de meldingen. Je precieze locatie vraagt de app nooit op.
 
-Grondslag (AVG): ons gerechtvaardigd belang om de cursus te verbeteren. Je kunt dit altijd uitzetten in Instellingen → Je gegevens en back-up → Help Dutchy beter maken. Daarna verstuurt de app geen statistieken meer en vervalt wat nog wachtte.
+Grondslag: je toestemming (AVG artikel 6 lid 1 onder a, en artikel 11.7a Telecommunicatiewet). Je trekt die even makkelijk in als je hem gaf: Instellingen → Je gegevens en back-up → Help Dutchy beter maken. Daarna verstuurt de app geen statistieken meer en vervalt wat nog wachtte. Wat al verstuurd is, verwijderen we op verzoek (zie Je rechten).
 
 PostHog verwerkt deze gegevens alleen om zijn dienst aan ons te leveren, onder zijn verwerkersvoorwaarden, en bewaart ze zolang wij zijn dienst gebruiken. Het eigen beleid van PostHog: https://posthog.com/privacy
 
@@ -74,13 +74,13 @@ Klopt er iets niet aan een vraag, dan kun je dat bij je antwoord melden met het 
 
 ## Cookies en tracking
 
-Dutchy plaatst geen cookies en bevat geen advertentie- of trackingcode: niemand volgt je via Dutchy over andere apps of websites. De gebruiksstatistieken hierboven bewaren hun willekeurige installatienummer en hun wachtrij in de opslag van de app, alleen voor onze eigen cijfers. De app laadt tijdens het gebruik geen cursusinhoud van internet: de hele cursus zit in het bestand dat je hebt gedownload. Het netwerkverkeer is de aankoopcontrole onder Betalingen, de gebruiksstatistieken als die aan staan, en de spraakherkenning van je telefoon als die online werkt.
+Dutchy plaatst geen cookies en bevat geen advertentie- of trackingcode: niemand volgt je via Dutchy over andere apps of websites. De gebruiksstatistieken hierboven bewaren, alleen na je ja, hun willekeurige installatienummer en hun wachtrij in de opslag van de app, alleen voor onze eigen cijfers. De app laadt tijdens het gebruik geen cursusinhoud van internet: de hele cursus zit in het bestand dat je hebt gedownload. Het netwerkverkeer is de aankoopcontrole onder Betalingen, de gebruiksstatistieken als die aan staan, en de spraakherkenning van je telefoon als die online werkt.
 
-Er is geen cookiemelding: er zijn geen cookies, en de statistieken zet je uit in Instellingen.
+In plaats van een cookiemelding vraagt de app bij het eerste gebruik of je de statistieken wilt delen. Ja en nee wegen even zwaar; zonder ja wordt er niets opgeslagen of verstuurd.
 
 ## Kinderen
 
-Dutchy is geschikt voor alle leeftijden en vraagt van niemand een naam, e-mailadres of andere gegevens, ook niet van kinderen. Verstuurd worden alleen de aankoopcontrole onder Betalingen en de gebruiksstatistieken, die je in Instellingen uitzet.
+Dutchy is bedoeld voor volwassenen (18 jaar en ouder) en staat zo in de app stores. De app vraagt van niemand een naam, e-mailadres of andere gegevens. Verstuurd worden alleen de aankoopcontrole onder Betalingen en, na je ja, de gebruiksstatistieken. Weet je dat een kind de app heeft gebruikt en gegevens heeft gedeeld, mail ons dan; we verwijderen ze.
 
 ## Je rechten
 
