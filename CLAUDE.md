@@ -22,3 +22,8 @@ Dutchy is the owner's Dutch course app (A1 to C2, built on the inburgering A2/B1
 with Owly the owl as mascot. Free A1; Dutchy Volledig EUR 14.99 per 3 months (EUR 9.99 for a new subscriber's first
 3 months). The app lives in `akhyarsadad/dutchy` (work branch `claude/app-waves`), whose `CLAUDE.md` holds the full
 product context. This site's Dutchy pages copy the app's `src/content/legal.ts`: change both together.
+
+## The owner's address (standing rule, 28 Nov 2026)
+
+- The owner's home address is private: only for invoices and legal processes. Never put it on the website, in an app, a store listing, a doc, a commit or any other public place, and do not ask about it again.
+- Show no address anywhere unless the law requires one; then use a post/business address the owner supplies, never the home address.
