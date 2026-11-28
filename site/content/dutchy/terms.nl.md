@@ -6,8 +6,6 @@
 
 Dutchy wordt aangeboden door **night owly**, een individuele ontwikkelaar, die verantwoordelijk is voor deze tekst en voor de gegevens die erin worden beschreven.
 
-Adres: Gerard Philipslaan 32, 5616 TS Eindhoven
-
 E-mail: nightowlyyyy@gmail.com
 
 ## Waar dit over gaat
